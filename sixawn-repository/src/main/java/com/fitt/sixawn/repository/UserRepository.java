@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 by Alibaba.inc All rights reserved
+ * Copyright (c) 2018 by Fitt.inc All rights reserved
  */
 package com.fitt.sixawn.repository;
 

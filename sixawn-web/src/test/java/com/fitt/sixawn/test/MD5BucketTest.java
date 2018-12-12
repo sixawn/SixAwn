@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 by Alibaba.inc All rights reserved
+ * Copyright (c) 2018 by Fitt.inc All rights reserved
  */
 package com.fitt.sixawn.test;
 
@@ -7,7 +7,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * @author : <a href="mailto:congchun.zcc@alibaba-inc.com">congchun.zcc</a>
+ * @author : <a href="mailto:congchun.zheng@gmail.com">congchun.zcc</a>
  * @version : 1.0.0
  * @descripiton : MD5(UID)分桶算法
  * @since : 2018/09/26
