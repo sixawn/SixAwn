@@ -3,13 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <!-- Base Info -->
     <modelVersion>4.0.0</modelVersion>
-    <description>SixAwn Spring Boot Multipart Module Project</description>
+    <description>SixAwn-Undertown</description>
     <name>sixawn</name>
     <packaging>pom</packaging>
 
     <!-- Parent Project -->
     <groupId>com.fitt.sixawn</groupId>
-    <artifactId>sixawn</artifactId>
+    <artifactId>sixawn-undertow</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <!-- Extend SpringBoot -->
@@ -20,19 +20,6 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <!-- SubModule -->
-    <modules>
-        <module>sixawn-config</module>
-        <module>sixawn-common</module>
-        <module>sixawn-domain</module>
-        <module>sixawn-repository</module>
-        <module>sixawn-service</module>
-        <module>sixawn-service-api</module>
-        <module>sixawn-worker</module>
-        <module>sixawn-monitor</module>
-        <module>sixawn-web</module>
-    </modules>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -41,58 +28,37 @@
         <lombok.version>1.18.2</lombok.version>
     </properties>
 
-    <!-- Dependencies Version Management -->
-    <dependencyManagement>
-        <dependencies>
-            <!-- Sub Module -->
-            <dependency>
-                <groupId>com.fitt.sixawn</groupId>
-                <artifactId>sixawn-config</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fitt.sixawn</groupId>
-                <artifactId>sixawn-common</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fitt.sixawn</groupId>
-                <artifactId>sixawn-domain</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fitt.sixawn</groupId>
-                <artifactId>sixawn-repository</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fitt.sixawn</groupId>
-                <artifactId>sixawn-service</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fitt.sixawn</groupId>
-                <artifactId>sixawn-service-api</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fitt.sixawn</groupId>
-                <artifactId>sixawn-web</artifactId>
-                <version>${project.version}</version>
-            </dependency>
+    <!-- Dependencies Management -->
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-undertow</artifactId>
+        </dependency>
 
-            <!-- Database Driver for MySQL -->
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>${mysql.driver.version}</version>
-            </dependency>
-            <!-- Code Tools for Getter/Setter -->
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+        <!-- Code Tools -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
