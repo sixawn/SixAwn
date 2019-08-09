@@ -1,5 +1,6 @@
 # SixAwn Project
 > Spring Boot Maven Multipart Module
+> SpringBoot+MybatisPlus+JSP
 
 ```sql
 CREATE TABLE [dbo].[user] (
