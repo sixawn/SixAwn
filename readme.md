@@ -8,6 +8,7 @@ CREATE TABLE [dbo].[user] (
                                 [name] varchar(32) COLLATE Chinese_PRC_CI_AS  NULL,
                                 [code] varchar(16) COLLATE Chinese_PRC_CI_AS  NULL,
                                 [phone] varchar(16) COLLATE Chinese_PRC_CI_AS  NULL,
+                                [title] varchar(4) COLLATE Chinese_PRC_CI_AS  NULL,
                                 [dept_code] varchar(16) COLLATE Chinese_PRC_CI_AS  NULL,
                                 [dept_name] varchar(32) COLLATE Chinese_PRC_CI_AS  NULL,
                                 CONSTRAINT [PK__user__3213E83F98978727] PRIMARY KEY CLUSTERED ([id])
