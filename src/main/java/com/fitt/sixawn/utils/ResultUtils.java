@@ -5,7 +5,7 @@ package com.fitt.sixawn.utils;
 
 import com.alibaba.fastjson.JSON;
 import com.fitt.sixawn.dto.ResultDTO;
-import com.fitt.sixawn.enums.ResultCodeEnum;
+import com.fitt.sixawn.constants.ResultCodeEnum;
 
 /**
  * <p>@description : 响应工具类 </p>

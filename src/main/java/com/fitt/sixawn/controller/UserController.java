@@ -4,6 +4,7 @@
 package com.fitt.sixawn.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.fitt.sixawn.constants.SixawnConsts;
 import com.fitt.sixawn.entity.User;
 import com.fitt.sixawn.service.UserService;
 import com.fitt.sixawn.utils.ResultUtils;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * <p>@description : UserController </p>
@@ -89,7 +91,10 @@ public class UserController {
             model.addAttribute("show", false);
             return "result";
         }
-        model.addAttribute("list", userService.list(null));
+        List<User> userList = userService.list(null);
+        userList.forEach(it -> it.setTitle(SixawnConsts.getTitleMap().get(it.getTitle())));
+
+        model.addAttribute("list", userList);
         model.addAttribute("key", key);
         return "list";
     }

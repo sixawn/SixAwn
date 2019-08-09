@@ -19,6 +19,7 @@
                 <th width="150px">工  号</th>
                 <th width="200px">手  机</th>
                 <th width="200px">科  室</th>
+                <th width="200px">职  称</th>
                 <th width="200px">操  作</th>
             </tr>
         </thead>
@@ -30,6 +31,7 @@
                 <td>${user.code}</td>
                 <td>${user.phone}</td>
                 <td>${user.deptName}</td>
+                <td>${user.title}</td>
                 <td>
                     <a href="${pageContext.request.contextPath}/user/edit?id=${user.id}">编辑</a> |
                     <a href="${pageContext.request.contextPath}/user/delete?id=${user.id}&key=${requestScope.key}">删除</a> |

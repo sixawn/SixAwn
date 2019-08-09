@@ -29,6 +29,8 @@ public class User implements Serializable {
 
     private String phone;
 
+    private String title;
+
     @TableField("dept_code")
     private String deptCode;
 
