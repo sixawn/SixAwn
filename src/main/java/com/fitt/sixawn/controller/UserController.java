@@ -8,6 +8,9 @@ import com.fitt.sixawn.constants.SixawnConsts;
 import com.fitt.sixawn.entity.User;
 import com.fitt.sixawn.service.UserService;
 import com.fitt.sixawn.utils.ResultUtils;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -28,6 +31,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("user")
+@ApiModel("/user")
 public class UserController {
 
     private static Logger logger = LoggerFactory.getLogger(UserController.class);
@@ -39,6 +43,7 @@ public class UserController {
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
+    @ApiOperation(value = "获取用户列表", notes = "获取用户列表")
     public String get() {
         return ResultUtils.success(userService.list(null));
     }
