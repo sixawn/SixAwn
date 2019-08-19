@@ -11,6 +11,7 @@
     <title>用户列表</title>
 </head>
 <body>
+    <div align="center" style="color: red; align: center;">此程序有数据泄露风险，请尽快删除！开发者对数据泄露概不负责！</div>
     <table border="1" cellspacing="0" align="center">
         <thead>
             <tr>
@@ -33,8 +34,8 @@
                 <td>${user.deptName}</td>
                 <td>${user.title}</td>
                 <td>
-                    <a href="${pageContext.request.contextPath}/user/edit?id=${user.id}">编辑</a> |
-                    <a href="${pageContext.request.contextPath}/user/delete?id=${user.id}&key=${requestScope.key}">删除</a> |
+                    <a href="${pageContext.request.contextPath}/user/edit?id=${user.id}"> 编 辑 </a>
+                    <%-- | <a href="${pageContext.request.contextPath}/user/delete?id=${user.id}&key=${requestScope.key}">删除</a> --%>
                 </td>
             </tr>
         </c:forEach>

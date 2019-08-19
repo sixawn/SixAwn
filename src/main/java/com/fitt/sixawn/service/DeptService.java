@@ -4,7 +4,7 @@
 package com.fitt.sixawn.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.fitt.sixawn.entity.User;
+import com.fitt.sixawn.entity.Dept;
 
 /**
  * <p>@description : 用户服务接口 </p>
@@ -12,6 +12,5 @@ import com.fitt.sixawn.entity.User;
  * <p>@since : 2019-08-07 </p>
  * <p>@version : 1.0.0 </p>
  */
-public interface UserService extends IService<User> {
-    User getByCode(String code);
+public interface DeptService extends IService<Dept> {
 }

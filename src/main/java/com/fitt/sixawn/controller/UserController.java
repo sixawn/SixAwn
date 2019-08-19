@@ -6,16 +6,17 @@ package com.fitt.sixawn.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.fitt.sixawn.constants.SixawnConsts;
 import com.fitt.sixawn.entity.User;
+import com.fitt.sixawn.service.DeptService;
 import com.fitt.sixawn.service.UserService;
 import com.fitt.sixawn.utils.ResultUtils;
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.ObjectUtils;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -39,6 +40,9 @@ public class UserController {
     @Resource
     private UserService userService;
 
+    @Resource
+    private DeptService deptService;
+
     //------------------------Restful Api--------------------------------//
 
     @RequestMapping(method = RequestMethod.GET)
@@ -58,6 +62,7 @@ public class UserController {
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index(Model model) {
         model.addAttribute("message", "请提交您信息");
+        model.addAttribute("deptList", deptService.list(null));
         return "index";
     }
 
@@ -67,9 +72,18 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "/edit", method = RequestMethod.GET)
-    public String edit(Model model, String id) {
+    public String edit(Model model, String id, String code) {
+        if (StringUtils.isEmpty(id) && StringUtils.isEmpty(code)) {
+            model.addAttribute("message", "请求参数主键ID或工号不能同时为空");
+            return "edit";
+        }
+
         model.addAttribute("message", "请提交您信息");
-        model.addAttribute("entity", userService.getById(id));
+
+        User user = StringUtils.isEmpty(id) ? userService.getByCode(code) : userService.getById(id);
+
+        model.addAttribute("entity", user);
+        model.addAttribute("deptList", deptService.list(null));
         return "edit";
     }
 
@@ -80,8 +94,10 @@ public class UserController {
      */
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
     public String delete(Model model, String id, String key) {
-        userService.removeById(Integer.valueOf(id));
-        return list(model, key);
+        if ("gzfemdt".equalsIgnoreCase(key)) {
+            userService.removeById(Integer.valueOf(id));
+        }
+        return list(model, key, null);
     }
 
     /**
@@ -90,13 +106,17 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String list(Model model, String key) {
+    public String list(Model model, String key, String code) {
         if (!"gzfemdt".equalsIgnoreCase(key)) {
             model.addAttribute("message", "^V^, 此页面需访问密钥! 【天王盖地虎】那种黑话.");
             model.addAttribute("show", false);
             return "result";
         }
-        List<User> userList = userService.list(null);
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        if (!StringUtils.isEmpty(code)) {
+            queryWrapper.eq("code", code);
+        }
+        List<User> userList = userService.list(queryWrapper);
         userList.forEach(it -> it.setTitle(SixawnConsts.getTitleMap().get(it.getTitle())));
 
         model.addAttribute("list", userList);

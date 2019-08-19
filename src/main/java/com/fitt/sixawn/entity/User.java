@@ -29,11 +29,18 @@ public class User implements Serializable {
 
     private String phone;
 
+    /** 开通权限: 1-会诊;2-转运 */
+    @TableField("permission")
+    private String permission;
+
+    /** 职称: 1-主任医师；2-副主任医师；3-主治医师；4-住院医师；5-主任护师；6-副主任护师；7-主管护师；8-护师；9-护士*/
     private String title;
 
+    /** 科室编码，多个用英文逗号隔开 */
     @TableField("dept_code")
     private String deptCode;
 
+    /** 科室名，多个用英文逗号隔开 */
     @TableField("dept_name")
     private String deptName;
 
