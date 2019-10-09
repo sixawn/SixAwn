@@ -22,11 +22,38 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.reporting.outputEnxcoding>UTF-8</project.reporting.outputEnxcoding>
         <java.version>1.8</java.version>
         <mysql.driver.version>5.1.42</mysql.driver.version>
         <lombok.version>1.18.2</lombok.version>
+        <dcm4che.version>5.18.0</dcm4che.version>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>maven-ali</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>Dcm4Che</id>
+            <name>Dcm4Che</name>
+            <url>http://www.dcm4che.org/maven2/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
     <!-- Dependencies Management -->
     <dependencies>
@@ -111,6 +138,28 @@
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>swagger-bootstrap-ui</artifactId>
             <version>1.9.0</version>
+        </dependency>
+
+        <!-- DICOM 文件解析-->
+        <dependency>
+            <groupId>org.dcm4che</groupId>
+            <artifactId>dcm4che-core</artifactId>
+            <version>${dcm4che.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.dcm4che</groupId>
+            <artifactId>dcm4che-image</artifactId>
+            <version>${dcm4che.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.dcm4che</groupId>
+            <artifactId>dcm4che-imageio</artifactId>
+            <version>${dcm4che.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.dcm4che.tool</groupId>
+            <artifactId>dcm4che-tool-dcm2jpg</artifactId>
+            <version>${dcm4che.version}</version>
         </dependency>
     </dependencies>
 
