@@ -36,7 +36,7 @@ public class DicomUtils {
 
     public static void main(String[] args) {
 
-        String dicomFile = "";
+        String dicomFile = "/Users/sixawn/Workspace/Ewell/SourceCodes/dicom/0001_000001_1.3.46.670589.26.602471.25.20190829.152133.118593.0";
         getTagByFile(dicomFile);
     }
 }
