@@ -1,0 +1,46 @@
+server:
+  port: 8081
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    context-path: /sixawn
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mysql?useSSL=false&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: mysqlroot
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*.xml
+  type-aliases-package: com.fitt.sixawn.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# 微信授权登录配置
+wechat:
+  # 凭证获取GET
+  token_url: https://open.weixin.qq.com/connect/oauth2/authorize?
+  # 用户同意授权,回调url----你的域名后面再加上/getcode
+  redirect_url: http://gbt.ngork.cc/getcode
+  # 获取openid
+  open_id_url: https://api.weixin.qq.com/sns/oauth2/access_token?
+  # 拉取用户信息
+  user_info_url: https://api.weixin.qq.com/sns/userinfo?
+  app_id: 123
+  app_secret: 123
+
+logging:
+  level:
+    cc.hidoctor: DEBUG
+    com.microsoft.sqlserver.jdbc: DEBUG
+    org.apache.ibatis: DEBUG
+    org.mybatis.spring: DEBUG
+  pattern:
+    console: "%boldMagenta(%d{yyyy-MM-dd HH:mm:ss}) [%p] %highlight(%C:%L) : %m %n"
