@@ -16,7 +16,7 @@ import java.io.Serializable;
  * <p>@version : 1.0.0 </p>
  */
 @Data
-@TableName("[dept]")
+@TableName("dept")
 public class Dept implements Serializable {
 
     /** 科室类型: 1-门诊;2-住院 */
