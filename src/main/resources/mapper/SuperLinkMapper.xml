@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fitt.sixawn.mapper.SuperLinkMapper">
+
+    <select id="getByOriginLink" parameterType="com.fitt.sixawn.entity.SuperLink" resultType="com.fitt.sixawn.entity.SuperLink">
+        select id, origin_link originLink, brief_link briefLink, gen_algo genAlgo, status, created, creator, modified, modifier
+        from sa_super_link where origin_link = #{originLink}
+    </select>
+
+</mapper>

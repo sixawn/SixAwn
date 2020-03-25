@@ -1,12 +1,13 @@
-## SixAwn Project
-> Spring Boot Maven Multipart Module
-> SpringBoot+MybatisPlus+JSP
+#### 项目说明
+短链服务，主要包括如下模块
 
-### 用户表创建 SQL
-```sql
+#### 功能列表
+- 短链生成
+- 短链跳转
+- ...
 
-### 数据库连接配置
-```text
+#### 修改记录
 
-
-```
+|修改日志 | 修改人 | 修改日期|版本计划|
+|----|----|----        |---|
+|v1.0.x|Sixawn Zheng|20200324| 短链服务 |

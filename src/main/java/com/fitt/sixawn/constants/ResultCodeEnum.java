@@ -66,4 +66,5 @@ public enum ResultCodeEnum {
 
     public void setSolution(String solution) {
         this.solution = solution;
-    }}
+    }
+}

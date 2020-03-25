@@ -14,10 +14,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * <p>@since : 2019-05-29 </p>
  * <p>@version : 1.0.0 </p>
  */
-@MapperScan("com.fitt.sixawn.mapper")
-@SpringBootApplication
 @EnableSwagger2
 @EnableSwaggerBootstrapUI
+@MapperScan("com.fitt.sixawn.mapper")
+@SpringBootApplication
 public class SixawnApplication {
     public static void main(String[] args) {
         new SpringApplicationBuilder(SixawnApplication.class).run(args);

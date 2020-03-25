@@ -1,5 +1,7 @@
 server:
-  port: 8081
+  port: 8899
+  servlet:
+    context-path: /super
 
 logging:
   level:
@@ -14,24 +16,25 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://222.240.240.215:3306/2019ncov?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://222.240.240.215:3306/sa_super_link?useSSL=false&useUnicode=true&characterEncoding=UTF-8
     username: 2019ncov
     password: 2019ncov
-    filters: stat
-    maxActive: 10
-    initialSize: 1
-    maxWait: 60000
-    minIdle: 1
-    timeBetweenEvictionRunsMillis: 60000
-    minEvictableIdleTimeMillis: 300000
-    validationQuery: select 'x'
-    testWhileIdle: true
-    testOnBorrow: false
-    testOnReturn: false
-    poolPreparedStatements: true
-    maxOpenPreparedStatements: 20
+    druid:
+      max-active: 10
+      max-wait: 60000
+      initial-size: 1
+      min-idle: 1
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: select 'x'
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-open-prepared-statements: 20
 
 mybatis-plus:
   mapper-locations: classpath:mapper/**/*.xml
   type-aliases-package: com.fitt.sixawn.entity
+
 
