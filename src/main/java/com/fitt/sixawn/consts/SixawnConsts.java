@@ -1,10 +1,12 @@
 /*
  * Copyright (c) 2019 by FITT.inc All rights reserved
  */
-package com.fitt.sixawn.constants;
+package com.fitt.sixawn.consts;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * <p>@description : 常量类 </p>
@@ -56,6 +58,18 @@ public interface SixawnConsts {
 
         String code;
         String algo;
+    }
+
+    @Getter
+    @AllArgsConstructor
+    enum ExpireEnum {
+        /**
+         * 未读消息有效期: 30 天
+         */
+        UNREAD_MSG(30L, TimeUnit.DAYS);
+
+        Long time;
+        TimeUnit timeUnit;
     }
 
 }

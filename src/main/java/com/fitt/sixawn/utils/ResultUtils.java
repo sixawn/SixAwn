@@ -4,7 +4,7 @@
 package com.fitt.sixawn.utils;
 
 import com.alibaba.fastjson.JSON;
-import com.fitt.sixawn.constants.ResultCodeEnum;
+import com.fitt.sixawn.consts.ResultCodeEnum;
 import com.fitt.sixawn.dto.ResultDTO;
 
 /**

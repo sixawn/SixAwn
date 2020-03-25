@@ -5,13 +5,11 @@ package com.fitt.sixawn.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.fitt.sixawn.constants.SixawnConsts;
+import com.fitt.sixawn.consts.SixawnConsts;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.experimental.SuperBuilder;
 
 /**
  * <p>@description 短链对象 </p>

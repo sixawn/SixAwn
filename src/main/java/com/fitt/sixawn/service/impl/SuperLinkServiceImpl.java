@@ -5,7 +5,7 @@ package com.fitt.sixawn.service.impl;
 
 import cn.hutool.core.date.DateUtil;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.fitt.sixawn.constants.SixawnConsts;
+import com.fitt.sixawn.consts.SixawnConsts;
 import com.fitt.sixawn.entity.SuperLink;
 import com.fitt.sixawn.mapper.SuperLinkMapper;
 import com.fitt.sixawn.service.SuperLinkService;

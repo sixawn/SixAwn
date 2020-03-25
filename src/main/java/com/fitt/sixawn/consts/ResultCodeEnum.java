@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2019 by FITT.inc All rights reserved
  */
-package com.fitt.sixawn.constants;
+package com.fitt.sixawn.consts;
 
 /**
  * <p>@description : 系统响应码枚举类 </p>
