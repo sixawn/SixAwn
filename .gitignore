@@ -28,6 +28,16 @@ hs_err_pid*
 *.ipr
 *.iws
 *.target
+*.vscode
 /*/*.iml
 /.idea/
 /target/
+/.classpath
+/.factorypath
+/.history/.gitignore_20200324145021
+/.history/.gitignore_20200401224904
+/.project
+/.settings/org.eclipse.core.resources.prefs
+/.settings/org.eclipse.jdt.apt.core.prefs
+/.settings/org.eclipse.jdt.core.prefs
+/.settings/org.eclipse.m2e.core.prefs
