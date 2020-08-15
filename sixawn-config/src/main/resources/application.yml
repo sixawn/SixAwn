@@ -8,9 +8,9 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/sixawn?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: root
-    password: mysqlroot
+    url: jdbc:mysql://localhost:3306/dbname?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: username
+    password: password
   jpa:
     show-sql: true
 
