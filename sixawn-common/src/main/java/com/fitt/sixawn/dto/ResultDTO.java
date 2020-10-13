@@ -4,7 +4,9 @@
 package com.fitt.sixawn.dto;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -15,6 +17,8 @@ import java.io.Serializable;
  * <p>@version : 1.0.0 </p>
  */
 @Data
+@Builder
+@NoArgsConstructor
 @AllArgsConstructor
 public class ResultDTO implements Serializable {
 

@@ -4,8 +4,8 @@
 package com.fitt.sixawn.utils;
 
 import com.alibaba.fastjson.JSON;
-import com.fitt.sixawn.dto.ResultDTO;
 import com.fitt.sixawn.constants.ResultCodeEnum;
+import com.fitt.sixawn.dto.ResultDTO;
 
 /**
  * <p>@description : 响应工具类 </p>
@@ -14,6 +14,9 @@ import com.fitt.sixawn.constants.ResultCodeEnum;
  * <p>@version : 1.0.0 </p>
  */
 public class ResultUtils {
+    public static String render(ResultCodeEnum resultCode, Object data) {
+        return render(resultCode.getCode(), resultCode.getMsg(), data);
+    }
 
     public static String render(String code, String msg, Object data) {
         ResultDTO resultDTO = new ResultDTO(code, msg, data);
@@ -34,5 +37,9 @@ public class ResultUtils {
 
     public static String fail() {
         return render(ResultCodeEnum.ERROR.getCode(), ResultCodeEnum.ERROR.getMsg(), null);
+    }
+
+    public static String fail(Object data) {
+        return render(ResultCodeEnum.ERROR.getCode(), ResultCodeEnum.ERROR.getMsg(), data);
     }
 }

@@ -18,7 +18,7 @@ import java.io.Serializable;
  * <p>@version : 1.0.0 </p>
  */
 @Data
-@TableName("[user]")
+@TableName("sc_sys_user")
 public class User implements Serializable {
     @TableId(type = IdType.AUTO)
     private Integer id;

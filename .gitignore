@@ -29,3 +29,7 @@ hs_err_pid*
 *.iws
 *.target
 /*/*.iml
+/sixawn-common/target/
+/sixawn-web/target/
+/sixawn-dal/target/
+/sixawn-service/target/
