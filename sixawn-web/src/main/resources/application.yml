@@ -9,9 +9,12 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://ip:port/daname?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://ip:port/dbname?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: username
     password: password
+  output:
+    ansi:
+      enabled: always
 
 mybatis-plus:
   mapper-locations: classpath:mapper/**/*.xml
@@ -24,7 +27,7 @@ jodconverter:
     port-number: 8100,8101,8102
     max-task-per-process: 100
   store:
-    path: /data/file
+    path: /Data/800x/file
 
 logging:
   level:
@@ -32,4 +35,4 @@ logging:
     org.apache.ibatis: DEBUG
     org.mybatis.spring: DEBUG
   pattern:
-    console: "%boldMagenta(%d{yyyy-MM-dd HH:mm:ss}) [%p] %highlight(%C:%L) : %m %n"
+    console: " %red(%d{yyyy-MM-dd HH:mm:ss}) %green([%thread]) %highlight(%-5level) %boldMagenta(%logger{10}) - %cyan(%msg%n)"
