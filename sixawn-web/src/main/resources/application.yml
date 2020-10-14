@@ -12,9 +12,7 @@ spring:
     url: jdbc:mysql://ip:port/dbname?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: username
     password: password
-  output:
-    ansi:
-      enabled: always
+
 
 mybatis-plus:
   mapper-locations: classpath:mapper/**/*.xml
@@ -35,4 +33,4 @@ logging:
     org.apache.ibatis: DEBUG
     org.mybatis.spring: DEBUG
   pattern:
-    console: " %red(%d{yyyy-MM-dd HH:mm:ss}) %green([%thread]) %highlight(%-5level) %boldMagenta(%logger{10}) - %cyan(%msg%n)"
+    console: " %red(%d{yyyy-MM-dd HH:mm:ss}) %boldGreen([%thread]) %highlight([%level]) %cyan(%logger) - %magenta(%msg%n)"
