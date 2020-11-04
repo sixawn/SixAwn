@@ -6,8 +6,6 @@ package com.fitt.sixawn.controller;
 import com.fitt.sixawn.entity.User;
 import com.fitt.sixawn.service.UserService;
 import com.fitt.sixawn.utils.ResultUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -23,11 +21,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("user")
 public class UserController extends BaseController<UserService, User> {
 
-    private static Logger logger = LoggerFactory.getLogger(UserController.class);
-
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
-    public String get() {
-        return ResultUtils.success(this.service.list(null));
+    public String list() {
+        return ResultUtils.success(this.service.list());
     }
 }

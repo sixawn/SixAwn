@@ -13,10 +13,4 @@ import com.fitt.sixawn.entity.User;
  * <p>@version : 1.0.0 </p>
  */
 public interface UserMapper extends BaseMapper<User> {
-    /**
-     * 根据主键ID获取用户
-     * @param id 主键ID
-     * @return User
-     */
-    User getById(Integer id);
 }

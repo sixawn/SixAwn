@@ -32,5 +32,6 @@ logging:
     com.microsoft.sqlserver.jdbc: DEBUG
     org.apache.ibatis: DEBUG
     org.mybatis.spring: DEBUG
+    com.fitt.sixawn: DEBUG
   pattern:
     console: " %red(%d{yyyy-MM-dd HH:mm:ss}) %boldGreen([%thread]) %highlight([%level]) %cyan(%logger) - %magenta(%msg%n)"
