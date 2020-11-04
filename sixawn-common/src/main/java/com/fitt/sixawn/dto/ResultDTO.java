@@ -21,6 +21,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ResultDTO implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     String code;
     String msg;

@@ -15,6 +15,7 @@ import org.jodconverter.core.document.DefaultDocumentFormatRegistry;
 import org.jodconverter.core.office.OfficeException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
@@ -65,7 +66,7 @@ public class PreviewServiceImpl implements PreviewService {
     @Override
     public ResultDTO convertPDF(InputStream in, String fileName, String fileExtension) {
         try {
-            String targetFileExtension = "html".equalsIgnoreCase(fileExtension) ? fileExtension : "pdf";
+            String targetFileExtension = StringUtils.isEmpty(fileExtension) ? "pdf" : fileExtension;
             File targetFile = new File(storePath + File.separator + fileName + "." + targetFileExtension);
             documentConverter.convert(in)
                     .as(DefaultDocumentFormatRegistry.getFormatByExtension(FileUtil.extName(fileName)))
