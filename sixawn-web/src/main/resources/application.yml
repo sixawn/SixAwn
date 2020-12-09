@@ -3,7 +3,7 @@ server:
   tomcat:
     uri-encoding: UTF-8
   servlet:
-    context-path: /userInfo
+    context-path: /
 
 spring:
   datasource:
@@ -22,10 +22,10 @@ jodconverter:
   local:
     enabled: true
     office-home: /Applications/LibreOffice.app/Contents
-    port-number: 8100,8101,8102
+    port-number: 8102
     max-task-per-process: 100
   store:
-    path: /Data/800x/file
+    path: filepath
 
 logging:
   level:

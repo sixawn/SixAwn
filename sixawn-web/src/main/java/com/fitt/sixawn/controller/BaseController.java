@@ -71,6 +71,5 @@ public class BaseController<Service extends IService<T>, T> {
     public Object get(String id) {
         return ResultUtils.success(service.getById(id));
     }
-
-
+    
 }
