@@ -12,6 +12,16 @@ spring:
     url: jdbc:mysql://ip:port/dbname?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: username
     password: password
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+    timeout: 5000ms
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 500
+        max-wait: 1ms
 
 
 mybatis-plus:
