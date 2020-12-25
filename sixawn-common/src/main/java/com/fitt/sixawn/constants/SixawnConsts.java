@@ -9,5 +9,10 @@ package com.fitt.sixawn.constants;
  * <p>@since : 2019-08-09 </p>
  * <p>@version : 1.0.0 </p>
  */
-public class SixawnConsts {
+public interface SixawnConsts {
+    /**
+     * 返回值标签
+     */
+    String RESP_RET_ANN = "RESP_RET_ANN";
+
 }

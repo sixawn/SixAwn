@@ -3,6 +3,7 @@
  */
 package com.fitt.sixawn.controller;
 
+import com.fitt.sixawn.annotation.ResponseResultAnnotation;
 import com.fitt.sixawn.entity.User;
 import com.fitt.sixawn.service.UserService;
 import com.fitt.sixawn.utils.ResultUtils;
@@ -19,11 +20,18 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("user")
+@ResponseResultAnnotation
 public class UserController extends BaseController<UserService, User> {
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public String list() {
         return ResultUtils.success(this.service.list());
+    }
+
+    @RequestMapping(value = "/select", method = RequestMethod.GET)
+    @ResponseBody
+    public Object select() {
+        return this.service.list();
     }
 }
