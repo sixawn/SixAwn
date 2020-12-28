@@ -3,7 +3,6 @@
  */
 package com.fitt.sixawn.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.fitt.sixawn.entity.User;
 
 /**
@@ -12,5 +11,5 @@ import com.fitt.sixawn.entity.User;
  * <p>@since : 2019-08-07 </p>
  * <p>@version : 1.0.0 </p>
  */
-public interface UserService extends IService<User> {
+public interface UserService extends BaseService<User> {
 }

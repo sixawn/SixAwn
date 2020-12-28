@@ -6,7 +6,6 @@
 package com.fitt.sixawn.service.impl;
 
 import cn.hutool.core.date.DateUtil;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.fitt.sixawn.constants.SixawnConsts;
 import com.fitt.sixawn.entity.ShortLink;
 import com.fitt.sixawn.mapper.ShortLinkMapper;
@@ -28,7 +27,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @since 2020-12-25
  */
 @Service
-public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink> implements ShortLinkService {
+public class ShortLinkServiceImpl extends BaseServiceImpl<ShortLinkMapper, ShortLink> implements ShortLinkService {
     private static final Logger logger = LoggerFactory.getLogger(ShortLinkServiceImpl.class);
 
     @Override

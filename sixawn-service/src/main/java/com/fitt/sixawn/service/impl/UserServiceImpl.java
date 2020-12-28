@@ -3,10 +3,10 @@
  */
 package com.fitt.sixawn.service.impl;
 
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.fitt.sixawn.entity.User;
 import com.fitt.sixawn.mapper.UserMapper;
 import com.fitt.sixawn.service.UserService;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 /**
@@ -15,7 +15,8 @@ import org.springframework.stereotype.Service;
  * <p>@since : 2019-08-07 </p>
  * <p>@version : 1.0.0 </p>
  */
+@Primary
 @Service
-public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
+public class UserServiceImpl extends BaseServiceImpl<UserMapper, User> implements UserService {
 
 }

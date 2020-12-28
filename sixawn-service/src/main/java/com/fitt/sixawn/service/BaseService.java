@@ -5,23 +5,14 @@
  *******************************************************************************/
 package com.fitt.sixawn.service;
 
-import com.fitt.sixawn.entity.ShortLink;
+import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
- * <p>@description 短链服务接口 </p>
+ * <p>@description 抽象服务接口 </p>
  *
  * @author <a href="mailto:congchun.zheng@gmail.com">Sixawn.ZHENG</a>
  * @version x.y.z
- * @since 2020-12-25
+ * @since 2020-12-28
  */
-public interface ShortLinkService extends BaseService<ShortLink> {
-    /**
-     * <p>@title getByOriginLink </p>
-     * <p>@description 根据短链查询短链信息 </p>
-     *
-     * @param shortLink 原始长地址
-     * @return ShortLink
-     * @since x.y.z by Sixawn.ZHENG
-     */
-    ShortLink getByOriginLink(ShortLink shortLink);
+public interface BaseService<T> extends IService<T> {
 }

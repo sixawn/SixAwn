@@ -24,8 +24,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("link")
 public class ShortLinkController extends BaseController<ShortLinkService, ShortLink> {
 
-    @PostMapping(name = "获取短链")
-    public String get(@RequestBody ShortLink shortLink) {
+    @PostMapping(value = "/shortlink", name = "获取短链")
+    public String getShortLink(@RequestBody ShortLink shortLink) {
         return ResultUtils.success(this.service.getByOriginLink(shortLink));
     }
 }

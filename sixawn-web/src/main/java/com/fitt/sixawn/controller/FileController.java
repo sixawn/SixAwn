@@ -29,7 +29,7 @@ import java.io.IOException;
 @Slf4j
 @RestController
 @RequestMapping("/files/")
-public class FileController extends BaseController {
+public class FileController {
     @Resource
     private PreviewService previewService;
 
